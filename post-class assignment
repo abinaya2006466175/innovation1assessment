@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Menu-Driven Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    #output {
+      white-space: pre-wrap;
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📟 Menu-Driven Calculator</h2>
+  <button onclick="startCalculator()">Start Calculator</button>
+
+  <div id="output"></div>
+
+  <script>
+    function startCalculator() {
+      let output = "";
+      let choice;
+
+      do {
+        choice = prompt(
+`📋 MENU:
+1. Add
+2. Subtract
+3. Multiply
+4. Divide
+5. Exit
+
+Enter your choice (1–5):`);
+
+        if (choice === null) break; // User pressed Cancel
