@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Break and Continue Example</title>
+</head>
+<body>
+  <h2>Loop Demonstration</h2>
+  <p id="breakOutput"></p>
+  <p id="continueOutput"></p>
+
+  <script>
+    // Break example: Find and stop at first prime number between 2 and 20
+    let breakResult = "First prime number between 2 and 20: ";
+    for (let i = 2; i <= 20; i++) {
+      let isPrime = true;
+      for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) {
+        breakResult += i;
+        break; // Stop at first prime
+      }
+    }
+    document.getElementById("breakOutput").innerText = breakResult;
+
+    // Continue example: Print only odd numbers between 1 and 20
+    let continueResult = "Odd numbers between 1 and 20: ";
+    for (let i = 1; i <= 20; i++) {
+      if (i % 2 === 0) continue; // Skip even numbers
+      continueResult += i + " ";
+    }
+    document.getElementById("continueOutput").innerText = continueResult;
+  </script>
+</body>
+</html>
